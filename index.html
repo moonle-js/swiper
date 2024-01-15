@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>Swiper</title>
+</head>
+<body>
+    <style>
+        .section{
+            display: flex !important;
+        }
+    </style>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+              <a class="navbar-brand" href="#">Maga's cinema</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">HomePage</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Categories</a></li>
+                      <li><a class="dropdown-item" href="#">Actors</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Additional information</a></li>
+                    </ul>
+                  </li>
+                  
+                </ul>
+                <ul class="navbar-nav" style="align-items: center; justify-content: center; width: 100%;">
+                        <li class="nav-item" style="align-self: center;">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+        <section id="section">
+            <img src="./5.jpg" style="width: 50px; height: 50px;">
+        </section>
+    </main>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       
+        var array = [
+            {   
+                'source': './5.jpg',
+                'name' : "Tehmine ve Zaur",
+                'Realize date' : 1996,
+                'Overall rating' : "8/10",
+                'Ratings' :  [9,8,9,8],
+            },
+            {   
+                'source': './5.jpg',
+                'name' : "Uzaq Sahillerde",
+                'Realize date' : 1997,
+                'Overall rating' : "8/10",
+                'Ratings' :  [9,8,9,8],
+            },
+            {   
+                'source': './5.jpg',
+                'name' : "3391",
+                'Realize date' : 2024,
+                'Overall rating' : "10/10",
+                'Ratings' :  [10,10,10,10],
+            },
+            {   
+                'source': './5.jpg',
+                'name' : "Spider man 2004",
+                'Realize date' : 2004,
+                'Overall rating' : "6/10",
+                'Ratings' :  [5,9,7,8],
+            },
+            {   
+                'source': './5.jpg',
+                'name' : "Matrix",
+                'Realize date' : 2002,
+                'Overall rating' : "9/10",
+                'Ratings' :  [9,10,9,9],
+            },
+
+        ]
+        var section = document.querySelector('#section');
+
+
+        var mesage = array.map(item => `
+        <div class="card" style="width: 18rem;">
+            <img src="${item.source}" class="card-img-top" >
+            <div class="card-body">
+                <h5 class="card-title">Name: ${item.name}</h5>
+                <p class="card-text">Realize date: ${item['Realize date']}</p>
+                <p class = "card-text"> Overall rating: ${item['Overall rating']}</p>
+                <p class = "card-text"> Ratings: ${item.Ratings}</p>
+            </div>
+        </div>
+        `)
+
+        section.innerHTML = mesage.join('');
+    </script>
+</body>
+</html>
